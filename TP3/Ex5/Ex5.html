@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="ex5Style.css" />
+  </head>
+  <body class="flex justify-center items-center">
+    <div class="full_screen">
+      <div class="info">
+        <p>Login Information</p>
+        <p>Email = gic@gmail.com</p>
+        <p>Password = Gic123</p>
+      </div>
+
+      <div>
+        <div class="profile">
+          <div class="content">
+            <img src="user.png" alt="" class="image ml-[100px]" />
+            <div class="input">
+              <label for="" class="font-bold size-[12px]">Email</label>
+              <input type="text" placeholder="Email" id="email" />
+            </div>
+            <div class="input">
+              <label for="" class="font-bold size-[12px]">Password</label>
+              <input type="text" placeholder="Password" id="password" />
+            </div>
+            <button id="login" type="text" onclick="login();">Login</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="./script1.js"></script>
+  </body>
+</html>

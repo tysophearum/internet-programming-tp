@@ -1,0 +1,61 @@
+.image {
+  border: 1rem solid white;
+  background-color: white;
+  border-radius: 9999px;
+  width: 200px;
+  height: 200px;
+  display: flex;
+  justify-content: center;
+}
+.full_screen {
+  border: 2px solid black;
+  display: grid;
+  grid-template-columns: 1fr;
+  row-gap: 100px;
+  width: 1000px;
+  height: 600px;
+  justify-content: center;
+  align-items: center;
+}
+.profile {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.input {
+  display: flex;
+  flex-direction: column;
+}
+#login {
+  border: 2px solid gray;
+  width: 500px;
+  height: 40px;
+  margin-top: 20px;
+  background-color: greenyellow;
+}
+/* Home Page */
+.content {
+  display: flex;
+  flex-direction: column;
+}
+.home {
+  display: flex;
+  justify-content: center;
+}
+#logout {
+  width: 70px;
+  height: 50px;
+  background-color: antiquewhite;
+}
+#password {
+  border: 2px solid gray;
+  width: 500px;
+  height: 40px;
+  background-color: rgb(209, 201, 192);
+}
+#email {
+  border: 2px solid gray;
+  width: 500px;
+  height: 40px;
+  background-color: rgb(225, 218, 209);
+}

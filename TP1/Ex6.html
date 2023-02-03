@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <style>
+            .wrapper {
+                width: 100%;
+                height: 100vh;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+            .big {
+                background-color: rgba(154,205,50,255);
+                padding: 20px;
+            }
+            .small {
+                display: none;
+            }
+            @media screen and (max-width: 600px) {
+                .big {
+                    display: none;
+                }   
+
+                .small {
+                    display: block;
+                    background-color: rgba(255,99,71,255);
+                    padding: 20px;
+                }
+            }
+        </style>
+    </head>
+    <body>
+
+        <div class="wrapper">
+            <span class="big">I'm BIG 🙀</span>
+            <span class="small">I'm SMALL 😥</span>
+        </div>
+
+    </body>
+</html>

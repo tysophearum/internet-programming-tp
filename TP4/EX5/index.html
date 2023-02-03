@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex 5</title>
+    <script src="../tailwind.js"></script>
+    <script src="js/tween.umd.js"></script>
+    <style>
+        @media only screen and (min-width: 650px) {
+            #more{
+                display: none;
+            }
+            #menu-small{
+                display: none;
+            }
+        }
+        @media only screen and (max-width: 650px) {
+            #media{
+                display: none;
+            }
+            #menu-big{
+                display: none;
+            }
+        }
+        
+    </style>
+</head>
+<body class="bg-[#f1f5f8]">
+    <div id="navbar" class="w-full h-16 bg-white flex justify-between items-center p-3">
+        <div class="text-lg font-bold text-slate-700">NAV-BAR</div>
+        <li type="none" id="menu-big" class="bg-white h-fit w-fit text-slate-600 flex justify-between">
+            <ul class="pt-2 pb-2 pl-4 pr-4 hover:bg-gray-100">Home</ul>
+            <ul class="pt-2 pb-2 pl-4 pr-4 hover:bg-gray-100">About</ul>
+            <ul class="pt-2 pb-2 pl-4 pr-4 hover:bg-gray-100">Projects</ul>
+            <ul class="pt-2 pb-2 pl-4 pr-4 hover:bg-gray-100">Contact</ul>
+        </li>
+        <img src="img/menu.png" alt="more" id="more" class="h-11" onclick="run()">
+        <div id="media" class="images h-full flex items-center">
+            <img class="h-2/3 ml-3 mr-3" src="img/facebook.png" alt="facebook">
+            <img class="h-2/3 ml-3 mr-3" src="img/twitter.png" alt="twitter">
+            <img class="h-2/3 ml-3 mr-3" src="img/linkedin.png" alt="linkedin">
+            <img class="h-2/3 ml-3 mr-3" src="img/gem.png" alt="diamond">
+        </div>
+    </div>
+    <li type="none" id="menu-small" class="bg-white h-0 w-full text-slate-600 overflow-hidden">
+        <ul class="pt-2 pb-2 pl-3 hover:bg-gray-100">Home</ul>
+        <ul class="pt-2 pb-2 pl-3 hover:bg-gray-100">About</ul>
+        <ul class="pt-2 pb-2 pl-3 hover:bg-gray-100">Projects</ul>
+        <ul class="pt-2 pb-2 pl-3 hover:bg-gray-100">Contact</ul>
+    </li>
+    <script src="js/javascript.js"></script>
+</body>
+</html>

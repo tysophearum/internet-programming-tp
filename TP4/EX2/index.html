@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="../tailwind.js"></script>
+        <title>EX 2</title>
+        <style>
+            .filter{
+                background-color: none;
+                color: #c29a6a;
+                border: 2px solid #c29a6a;
+                border-bottom: 2px solid #7a7166;
+                border-right: 2px solid #7a7166;
+                padding: 3px 10px 3px 10px;
+                border-radius: 7px;
+                transition: background-color 0.2s, border-width 0.2s, padding 0.2s;
+                margin: 10px;
+                font-size: small;
+            }
+            .filter:hover{
+                background-color: #c29a6a;
+                border: 2px solid #c29a6a;
+                color: #f1f5f8;
+            }
+            @media only screen and (max-width: 800px) {
+                #container{
+                    width: 533.333333333px;
+                }
+                #menu-info {
+                    flex-direction: column;
+                }
+                #image{
+                    width: 500px;
+                    margin-bottom: 1rem;
+                }
+            }
+        </style>
+    </head>
+    <body class="w-full flex justify-center">
+        <div id="container" class="w-2/3 h-fit border-2 p-10 border-black bg-[#f1f5f8]">
+            
+            <div id="our-menu" class="text-3xl font-bold text-slate-700 flex justify-center ">Our Menu</div>
+            <div class="w-full flex justify-center">
+                <div class="border-2 w-14 border-solid border-[#c29a6a] mt-3 mb-3"></div>
+            </div>
+            <div id="filters" class="w-full flex justify-center mt-2">
+                <button class="filter">All</button>
+                <button class="filter">Breakfast</button>
+                <button class="filter">Lunch</button>
+                <button class="filter">Shake</button>
+                <button class="filter">Dinner</button>
+            </div>
+            <div id="menu-option" class="pt-10">
+                <div id="menu-info" class="pancake-menu flex flex-row mb-10">
+                    <img id="image" src="pancake.jpg" alt="image of a pancake" class="pancake-image w-[266.666px] h-52 object-cover rounded-lg border-4 border-[#c29a6a] mr-4">
+                    <div id="name-price" class="w-full" >
+                        <div class="pancake-info h-fit w-full flex justify-between border-b-2 border-b-zinc-300">
+                            <div class="pancake-name font-bold text-slate-700">Buttermilk Pancakes</div>
+                            <div class="pancake-price font-bold text-[#c29a6a]">$15.99</div>
+                        </div>
+                        <div id="pancake-info" class="text-slate-500 mt-4">
+                            Definitions of buttermilk pancake. a pancake made with buttermilk. type of: battercake, flannel cake, flannel-cake, flapcake, flapjack, griddlecake, hot cake, hotcake, pancake.
+                        </div>
+                    </div>
+                </div> 
+                <div id="menu-info" class="pancake-menu flex flex-row mb-10">
+                    <img id="image" src="Burger.jpg" alt="image of a pancake" class="pancake-image w-[266.666px] h-52 object-cover rounded-lg border-4 border-[#c29a6a] mr-4">
+                    <div id="name-price" class="w-full" >
+                        <div class="pancake-info h-fit w-full flex justify-between border-b-2 border-b-zinc-300">
+                            <div class="pancake-name font-bold text-slate-700">Dinner Double</div>
+                            <div class="pancake-price font-bold text-[#c29a6a]">$13.99</div>
+                        </div>
+                        <div id="pancake-info" class="text-slate-500 mt-4">
+                            Definitions of buttermilk pancake. a pancake made with buttermilk. type of: battercake, flannel cake, flannel-cake, flapcake, flapjack, griddlecake, hot cake, hotcake, pancake.
+                        </div>
+                    </div>
+                </div> 
+                <div id="menu-info" class="pancake-menu flex flex-row mb-10">
+                    <img id="image" src="milkshake.jpg" alt="image of a pancake" class="pancake-image w-[266.666px] h-52 object-cover rounded-lg border-4 border-[#c29a6a] mr-4">
+                    <div id="name-price" class="w-full" >
+                        <div class="pancake-info h-fit w-full flex justify-between border-b-2 border-b-zinc-300">
+                            <div class="pancake-name font-bold text-slate-700">Godzilla Milkshake</div>
+                            <div class="pancake-price font-bold text-[#c29a6a]">$6.99</div>
+                        </div>
+                        <div id="pancake-info" class="text-slate-500 mt-4">
+                            Definitions of buttermilk pancake. a pancake made with buttermilk. type of: battercake, flannel cake, flannel-cake, flapcake, flapjack, griddlecake, hot cake, hotcake, pancake.
+                        </div>
+                    </div>
+                </div> 
+            </div>
+        </div>
+    </body>
+</html>

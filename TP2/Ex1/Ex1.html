@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Ex 1</title>
+        <!-- <script src="https://cdn.tailwindcss.com"></script> -->
+        <script src="tailwind.js"></script>
+    </head>
+    <body class="flex items-center justify-center bg-slate-500">
+        <div class="container w-96">
+            <div class="post-container w-96 h-fit pt-2 pr-2 pl-2 bg-white rounded-t">
+                <div class="header w-full h-fit  mb-3 flex justify-between">
+                    <div class="profile w-fit h-full flex items-center">
+                        <div class="profile-picture w-10 h-fit mr-2">
+                            <img src="image/profile-pic.jpg" class="rounded-full h-full">
+                        </div>
+                        <div class="profile-info w-fit">
+                            <div class="name w-fit h-1/2 text-cyan-700 font-bold text-sm">Ty Sophearum</div>
+                            <div class="time flex items-center">
+                                <div class="text-slate-500 text-xs">Today at 19:33 ·</div>
+                                <img src="image/globe.png" class="h-3 ml-1 opacity-25">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="more w-fit h-full">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M6.75 12a.75.75 0 11-1.5 0 .75.75 0 011.5 0zM12.75 12a.75.75 0 11-1.5 0 .75.75 0 011.5 0zM18.75 12a.75.75 0 11-1.5 0 .75.75 0 011.5 0z" />
+                        </svg>
+                    </div>
+                </div>
+
+                <div class="text-content text-sm">
+                    <div class="status leading-4">
+                        I want this mockup so bad!!<br>
+                        Found it at <a href="http://marinad.com.ar" class="text-cyan-700">http://marinad.com.ar</a><br>
+                    </div>
+                    <div class="translation leading-8 text-cyan-700">See translation</div>
+                </div>
+
+                <div class="image-content w-full h-fit">
+                    <img src="image/image2.webp" class="w-full h-full">
+                </div>
+
+                <div class="interaction-buttons h-10 w-full flex items-center">
+                    <div class="w-1/3 h-full flex items-center justify-center">
+                        <img src="image/like-btn.png" class="h-5">
+                        <div class="like-txt text-sm ml-1">Like</div>
+                    </div>
+                    <div class="w-1/3 h-full flex items-center justify-center">
+                        <img src="image/comment-btn.png" class="h-4">
+                        <div class="comment-txt text-sm ml-1">Comment</div>
+                    </div>
+                    <div class="w-1/3 h-full flex items-center justify-center">
+                        <img src="image/share-btn.png" class="h-5">
+                        <div class="share-txt text-sm ml-1">Share</div>
+                    </div>
+                </div>
+            </div>
+            <div class="comment-container w-96 h-fit p-2 bg-slate-50 rounded-b border-t-2">
+                <div class="reactions h-7 w-full flex">
+                    <img src="image/like-reaction.png" class="h-4">
+                    <img src="image/love-reaction.png" class="h-4">
+                    <img src="image/wow-reaction.png" class="h-4">
+                    <div class="reaction-number text-xs text-cyan-700 h-full ml-1">1.035</div>
+                </div>
+                <div class="coment-section h-fit w-full flex items-center">
+                    <img src="image/profile-pic.jpg" class="h-8 rounded-full">
+                    <input type="text" placeholder="Write something..." class="bg-white w-80 h-8 ml-2 pl-2 pr-2 rounded-full indent-0.5 border focus:outline-none">
+                    <div class="h-3.5 w-20 flex space-x-3 absolute ml-64">
+                        <img src="image/smile.png" class="opacity-50">
+                        <img src="image/camera.png" class="opacity-50">
+                        <img src="image/gif.png" class="opacity-50">
+                        <img src="image/sticker.png" class="opacity-50">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

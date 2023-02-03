@@ -1,0 +1,32 @@
+<html>
+    <head>
+        <title>Ex8</title>
+        <style>
+            .wrapper{
+                width: 100%;
+                height: 90vh;
+                background-color: rgba(128, 128, 128, 0.486);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                
+            }
+            .drop{
+                padding: 30px;
+                animation-name: drop;
+                animation-duration: var(--order);
+            }
+            @keyframes drop {
+                0% {transform: translateY(-300px)}
+                100% {transform: translateY(0px)}
+            }
+        </style>
+    </head>
+    <body>
+        <div class="wrapper">
+            <span class="drop" style="--order: 1s">🥳</span>
+            <span class="drop" style="--order: 2s">😛</span>
+            <span class="drop" style="--order: 3s">🤩</span>
+        </div>
+    </body>
+</html>
