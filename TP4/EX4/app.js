@@ -53,7 +53,6 @@ generate.addEventListener("click", ()=>{
     localStorage.setItem("colorsArray", JSON.stringify(col.record))
     renderRecord()
 })
-
 reset.addEventListener("click", ()=>{
     col.reset()
     backgroundEl.style.backgroundColor = null

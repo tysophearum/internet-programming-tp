@@ -27,7 +27,6 @@ const init = (start, End) => {
         })
         .start()
 }
-
 function run () {
     init(pos.start, pos.end)
 }

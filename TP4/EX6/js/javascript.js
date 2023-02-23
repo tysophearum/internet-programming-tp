@@ -4,9 +4,7 @@ var pos = {start: 0, end: 320}
 var op = false
 
 function render(x) {
-    // menu.style.position = 'absolute';
     menu.style.width = x+'px';
-    // more.style.rotate = -(x/1.88888)+"deg"
 }
 
 function animate() {
@@ -22,9 +20,6 @@ const init = (start, End) => {
         .easing(TWEEN.Easing.Quadratic.out)
         .onUpdate(() => {
             render(coords.x)
-            // let tmp = pos.start
-            // pos.start = pos.end
-            // pos.end = tmp
         })
         .start()
 }

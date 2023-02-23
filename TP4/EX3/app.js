@@ -37,6 +37,7 @@ var c = new counter(0)
 if (localStorage.getItem("counter") != null) {
     c = new counter(JSON.parse(localStorage.getItem("counter")))
 }
+
 checkNum()
 
 counterEl.innerText = c.number
