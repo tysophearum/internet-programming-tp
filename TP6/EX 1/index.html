@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+ 
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<style>
+ 
+</style>
+ 
+<body>
+  <div id="scrollable-wrapper"
+    style="width: 500px; height: 700px; background-color: grey; margin: auto; overflow-y: auto;">
+  </div>
+ 
+  <script>
+    let scrollerEle = document.getElementById("scrollable-wrapper");
+    let info = document.getElementById("info");
+    
+    let pageNum = 0;
+    let loading = false;
+ 
+    function fetchAPI(pageNum) {
+      return fetch(`https://api.instantwebtools.net/v1/passenger?page=${pageNum}&size=20`)
+    }
+ 
+    function onFetch() {
+      loading = true;
+      fetchAPI(pageNum).then(async(res) => {
+        let data = await res.json();
+        let info = data.data
+        info.forEach(element => {
+            scrollerEle.innerHTML += `
+            <div id="info" class="w-[98%] p-3 h-fit m-1 bg-gray-400">
+                <div class="airline">✈️:${element.airline[0].name} - ${element.airline[0].country}</div>
+                <div class="passenger">👨:${element.name}</div>
+            </div>
+            `
+            
+        });
+        loading = false;
+        pageNum++;
+      });
+    }
+ 
+    scrollerEle.addEventListener("scroll", (event) => {
+      if (scrollerEle.scrollTop + scrollerEle.clientHeight >= (scrollerEle.scrollHeight * 0.95)) {
+        /// to fetch next page from api
+        if (!loading) {
+          onFetch();
+        }
+      }
+    });
+ 
+    onFetch();
+  </script>
+</body>
+ 
+</html>
