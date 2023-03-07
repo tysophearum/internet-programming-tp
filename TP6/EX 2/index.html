@@ -5,46 +5,73 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-  <script src="https://cdn.tailwindcss.com"></script>
+  <title>ex 2</title>
+  <script src="../tailwind.js"></script>
 </head>
 <style>
  
 </style>
  
-<body>
-  <div id="scrollable-wrapper"
-    style="width: 500px; height: 700px; background-color: grey; margin: auto; overflow-y: auto;">
+<body class="flex justify-center">
+  <div class="all w-fit flex justify-center">
+    <div id="pagenum" class="bg-slate-600 w-fit h-fit p-5"></div>
+    <div id="scrollable-wrapper"
+      style="width: 500px; height: 700px; background-color: grey; margin: auto; overflow-y: auto;">
+    </div>
   </div>
  
   <script>
-    let scrollerEle = document.getElementById("scrollable-wrapper");
-    let info = document.getElementById("info");
-    
-    let pageNum = 0;
-    let loading = false;
+    var scrollerEle = document.getElementById("scrollable-wrapper");
+    var pageNum = 0
+    var local = window.localStorage
+
+    var loading = false;
  
     function fetchAPI(pageNum) {
       return fetch(`https://api.instantwebtools.net/v1/passenger?page=${pageNum}&size=20`)
     }
- 
+
     function onFetch() {
       loading = true;
       fetchAPI(pageNum).then(async(res) => {
         let data = await res.json();
         let info = data.data
+        local.setItem(JSON.stringify(pageNum), JSON.stringify(info))
         info.forEach(element => {
-            scrollerEle.innerHTML += `
+            render(element)
+        });
+        loading = false;
+        pageNum++;
+        local.setItem("pageNum", JSON.stringify(pageNum))
+        document.getElementById("pagenum").textContent = pageNum
+      });
+    }
+
+    function render(element) {
+      scrollerEle.innerHTML += `
             <div id="info" class="w-[98%] p-3 h-fit m-1 bg-gray-400">
                 <div class="airline">✈️:${element.airline[0].name} - ${element.airline[0].country}</div>
                 <div class="passenger">👨:${element.name}</div>
             </div>
             `
-            
-        });
-        loading = false;
-        pageNum++;
-      });
+    }
+
+    function checkStorage(){
+      pageNum = JSON.parse(local.getItem("pageNum"))
+      if (pageNum != null){
+        for(let i = 0; i<pageNum; i++){
+          let localEl = JSON.parse(local.getItem(i))
+          localEl.forEach((el)=>{
+            render(el)
+          })
+        }
+        document.getElementById("pagenum").textContent = pageNum
+        return false
+      }
+      else{
+        pageNum = 0
+        return true
+      }
     }
  
     scrollerEle.addEventListener("scroll", (event) => {
@@ -55,8 +82,12 @@
         }
       }
     });
- 
-    onFetch();
+
+    checkStorage()
+    if(checkStorage()){
+      onFetch()
+
+    }
   </script>
 </body>
  
