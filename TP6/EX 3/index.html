@@ -85,7 +85,6 @@
         return true
       }
     }
- 
     scrollerEle.addEventListener("scroll", (event) => {
       if (scrollerEle.scrollTop + scrollerEle.clientHeight >= (scrollerEle.scrollHeight * 0.95)) {
         /// to fetch next page from api
@@ -94,13 +93,10 @@
         }
       }
     });
-
     // checkStorage()
     if(checkStorage()){
       onFetch()
-
     }
-
     document.getElementById("l-container").addEventListener("click", (e)=>{
       let id = e.target.id
       fetch(`https://api.punkapi.com/v2/beers?page=${id}&per_page=1`).then(async(res) => {
@@ -114,6 +110,7 @@
         }
       }
     })
+    scrollerEle.children[0].click()
   </script>
 </body>
 </html>

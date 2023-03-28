@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EX 1</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .loader {
+          border: 16px solid #f3f3f3;
+          border-radius: 50%;
+          border-top: 16px solid #3498db;
+          width: 120px;
+          height: 120px;
+          -webkit-animation: spin 2s linear infinite; /* Safari */
+          animation: spin 2s linear infinite;
+        }
+        
+        /* Safari */
+        @-webkit-keyframes spin {
+          0% { -webkit-transform: rotate(0deg); }
+          100% { -webkit-transform: rotate(360deg); }
+        }
+        
+        @keyframes spin {
+          0% { transform: rotate(0deg); }
+          100% { transform: rotate(360deg); }
+        }
+        </style>
+</head>
+<body class="flex justify-center">
+    <div class="container w-1/2 h-fit border-black border-2 flex flex-col items-center p-6">
+        <img src="https://cdn-icons-png.flaticon.com/512/4160/4160749.png" alt="its boring" class="emoji w-1/6">
+        <h2 class="text-4xl font-bold mb-5">Are you boring?</h2>
+        <button class="generate w-fit pl-10 pr-10 pt-3 pb-3 bg-[#3083ff] rounded-lg font-bold text-white" onclick="fetchNewActivity ()">Tell me what to do</button>
+        <div id="info-container" class=" w-1/2 border-gray-300 border-[1px] m-9 flex flex-col items-center p-4 bg-[#f4f4f4] rounded-lg">
+            <div class="loader hidden"></div>
+            <h2 class="text-lg font-bold mb-5">Learn and play a new card game</h2>
+            <div class="info flex items-center w-full">
+                <img src="https://cdn-icons-png.flaticon.com/512/565/565382.png" alt="" class="h-4 m-2">
+                <p>Type: </p>
+                <p class="w-full ml-1" id="type-info"></p>
+            </div>
+            <div class="info flex items-center w-full">
+                <img src="https://cdn-icons-png.flaticon.com/512/33/33308.png" alt="" class="h-4 m-2">
+                <p>Participants: </p>
+                <p class="w-full ml-1" id="participants-info"></p>
+            </div>
+            <div class="info flex items-center w-full">
+                <img src="https://cdn-icons-png.flaticon.com/512/126/126229.png" alt="" class="h-4 m-2">
+                <p>Price: </p>
+                <p class="w-full ml-1" id="price-info"></p>
+            </div>
+            <div class="info flex items-center w-full">
+                <img src="https://cdn-icons-png.flaticon.com/512/455/455691.png" alt="" class="h-4 m-2">
+                <p>Link: </p>
+                <p class="w-full ml-1" id="link-info"></p>
+            </div>
+        </div>
+        <div id="loader-container" class="hidden w-1/2 border-gray-300 border-[1px] m-9 p-4 bg-[#f4f4f4] rounded-lg justify-center">
+            <div class="loader"></div>
+        </div>
+    </div>
+    <script>
+        var type = document.getElementById("type-info")
+        var participants = document.getElementById("participants-info")
+        var price = document.getElementById("price-info")
+        var link = document.getElementById("link-info")
+        var load = document.getElementById("loader-container")
+        var info = document.getElementById("info-container")
+
+
+        function fetchNewActivity () {
+            info.style.display = "none"
+            load.style.display = "flex"
+            
+            fetch("https://www.boredapi.com/api/activity").then(async (res)=>{
+                let data = await res.json();
+                renderInfo(data)
+                load.style.display = "none"
+                info.style.display = "flex"
+            })
+
+        }
+
+        function renderInfo (data) {
+            type.textContent = data["type"]
+            participants.textContent = data["participants"]
+            price.textContent = data["price"]
+            link.textContent = data["link"]
+        }
+    </script>
+</body>
+</html>
