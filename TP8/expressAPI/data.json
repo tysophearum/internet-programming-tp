@@ -1,1 +1,11 @@
-{"name":"phearum","age":12}
+[
+  {
+    "id": 0,
+    "username": "phearum",
+    "email": "phearum@gmail.com",
+    "firstname": "Ty",
+    "lastname": "Sophearum",
+    "password": "12345",
+    "success": true
+  }
+]

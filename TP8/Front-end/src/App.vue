@@ -3,20 +3,24 @@ import { RouterLink, RouterView } from 'vue-router'
 </script>
 
 <template>
-  <div class="flex w-full h-[100vh] justify-center items-center">
-    <header>
-      <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" /> 
-      <div class="wrapper">
-        <nav class="">
-          <RouterLink to="/login">Log in</RouterLink>
-          <RouterLink to="/register">Register</RouterLink>
-        </nav>
-      </div>
-    </header>
-  
-    <RouterView/>
-  </div>
+  <RouterView/>
 </template>
+
+<script>
+import home from './views/home.vue'
+
+export default {
+  data() {
+    return {
+      logout: true,
+    };
+  },
+  name: "App",
+  components: {
+    home
+  }
+}
+</script>
 
 <style scoped>
 header {
