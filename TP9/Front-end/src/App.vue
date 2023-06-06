@@ -7,7 +7,6 @@ import { RouterLink, RouterView } from 'vue-router'
 </template>
 
 <script>
-import home from './views/home.vue'
 
 export default {
   data() {
@@ -17,7 +16,7 @@ export default {
   },
   name: "App",
   components: {
-    home
+    
   }
 }
 </script>
